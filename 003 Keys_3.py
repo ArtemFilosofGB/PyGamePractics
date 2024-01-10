@@ -21,6 +21,7 @@ x = WHIDTH // 2
 y = HEIGHT // 2
 speed = 10
 
+move =0
 
 # Основной цикл
 fl_left = fl_right = fl_up = fl_down = False
@@ -30,21 +31,17 @@ while True:
             py.quit()
             quit()
 
-        # Проверка когда клавиша нажимается
-    keys = py.key.get_pressed() # возвращает словарь с нажатыми клавишами и их состояниями, нет Shift Ctrl Alt
-    if keys[py.K_ESCAPE]:
-        py.quit()
-        quit()
-
-    if keys[py.K_LEFT]:
-        x -= speed
-    if keys[py.K_RIGHT]:
-        x += speed
-    if keys[py.K_UP]:
-        y -= speed
-    if keys[py.K_DOWN]:
-        y += speed
-
+        # События когда клавиша нажимается
+        elif event.type == py.KEYDOWN:
+            if event.key == py.K_LEFT and event.mod==4160: #left ctrl
+                move = -speed
+            elif event.key == py.K_RIGHT and event.mod == 4160: #left ctrl
+                move = speed
+        # События когда клавиша отпускается
+        elif event.type == py.KEYUP:
+            if event.key in [py.K_LEFT, py.K_RIGHT]:
+                move = 0
+    x+=move
 
     # Прорисовка обьектов
     screen.fill(WHITE)
@@ -54,4 +51,4 @@ while True:
     clock.tick(FPS)
 
 
-#Плавная работа но нет поддержки клавишь модификации
+# Движенеи работает не стабильно сначала нужно зжать Ctrl и потом клавишу движения
