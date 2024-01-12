@@ -1,14 +1,20 @@
 import pygame as py
-
 py.init()
+WIDTH, HEIGHT = 800, 600
 
-screen = py.display.set_mode((1024, 800))
-py.display.set_caption("Pygame game game")
-py.display.set_icon(py.image.load("icon.bmp"))
+WHITE=(255,255,255)
+BLUE=(0,0,255)
+GREEN=(0,255,0)
+RED=(255,0,0)
 
 clock = py.time.Clock()
 FPS = 60
 RGB = (255, 255, 255)
+
+screen = py.display.set_mode((WIDTH, HEIGHT))
+py.display.set_caption("Pygame game game")
+py.display.set_icon(py.image.load("icon.bmp"))
+
 
 #Основной цикл
 while True:

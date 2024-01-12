@@ -41,7 +41,7 @@ while True:
                 screen.fill(RGB)
                 py.draw.rect(screen,(0,0,255),(start_point[0],start_point[1],width,height))
                 py.display.update()
-        elif event.type == py.MOUSEBUTTONUP:  # отпустили левую кнопку мыши - конец рисования
+        elif event.type == py.MOUSEBUTTONUP and event.button ==1:  # отпустили левую кнопку мыши - конец рисования
             fl_start_draw = False
 
     clock.tick(FPS)  # 60 кадров в секунду
