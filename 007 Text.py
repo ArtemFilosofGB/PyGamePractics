@@ -23,18 +23,19 @@ screen = py.display.set_mode((WIDTH, HEIGHT))
 py.display.set_caption("Pygame game game")
 py.display.set_icon(py.image.load("icon.bmp"))
 
-screen.fill(WHITE)
-sc_text1 = f1.render("Hello, World!", 1, RED)  # render формирует поверхность на которой пишется текст, 1- сглаженный
-pos = sc_text1.get_rect(center=(WIDTH // 2, HEIGHT // 2))
-screen.blit(sc_text1, pos)
+def text_board():
+    sc_text1 = f1.render("Hello, World!", 1, RED)  # render формирует поверхность на которой пишется текст, 1- сглаженный
+    pos = sc_text1.get_rect(center=(WIDTH // 2, HEIGHT // 2))
+    screen.blit(sc_text1, pos)
 
-sc_text2 = f2.render("Hello, World!", 1, RED)  # render формирует поверхность на которой пишется текст, 1- сглаженный
-pos2 = sc_text2.get_rect(center=(WIDTH // 2, HEIGHT // 2 + 30))
-screen.blit(sc_text2, pos2)
+    sc_text2 = f2.render("Hello, World!", 1, RED)  # render формирует поверхность на которой пишется текст, 1- сглаженный
+    pos2 = sc_text2.get_rect(center=(WIDTH // 2, HEIGHT // 2 + 30))
+    screen.blit(sc_text2, pos2)
 
-sc_text3 = (f3.render("Hello, World!", 1, RED))  # render формирует поверхность на которой пишется текст, 1- сглаженный
-pos3 = sc_text3.get_rect(center=(WIDTH // 2, HEIGHT // 2 + 60))
-screen.blit(sc_text3, pos3)
+    sc_text3 = (f3.render("Hello, World!", 1, RED))  # render формирует поверхность на которой пишется текст, 1- сглаженный
+    pos3 = sc_text3.get_rect(center=(WIDTH // 2, HEIGHT // 2 + 60))
+    screen.blit(sc_text3, pos3)
+    py.display.update()
 
 f = py.font.SysFont(None, 50)
 sc_text = f.render("Принветики", 0, BLUE)
@@ -61,5 +62,7 @@ while 1:
             rel = py.mouse.get_rel() #получаем последующие смещения
             pos.move_ip(rel)
             draw_text()
+
+            text_board()
 
     clock.tick(FPS)
