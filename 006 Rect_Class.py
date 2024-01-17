@@ -18,6 +18,7 @@ screen = py.display.set_mode((WIDTH, HEIGHT))
 py.display.set_caption("Pygame game game")
 py.display.set_icon(py.image.load("icon.bmp"))
 
+
 ground = HEIGHT - 70
 jump_force = 20  # сила прыжка
 move = jump_force + 1  # текущая вертикальная скорость

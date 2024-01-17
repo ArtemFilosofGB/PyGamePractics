@@ -22,3 +22,9 @@
    * Шрифты
 8. Модуль Image Transform
 9. Спрайты
+10. Пересечения областей (Обработка столкновений)
+11. Музыка
+
+FootballCatcher
+![](img/football_catcher.png)
+
